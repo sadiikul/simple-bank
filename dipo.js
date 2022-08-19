@@ -1,23 +1,43 @@
+
+function getvalue(input){
+    const inputfield=document.getElementById(input)
+    const inputvalue=inputfield.value
+    const inputvalueint=parseFloat(inputvalue)
+    inputfield.value=''
+    return inputvalueint
+}
+function getinnertxt(input){
+    const inputtxt=document.getElementById(input)
+    const inputinnertxt=inputtxt.innerText
+    const inputinnertxtint=parseFloat(inputinnertxt)
+    return inputinnertxtint
+}
+function setvalue(input,value){
+    const inputvalue =document.getElementById(input)
+    inputvalue.innerText=value
+
+
+
+}
+
+
 document.getElementById('dipo-btn').addEventListener('click',function(){
-    const dipofiled=document.getElementById('dipo-field')
-    const dipovalue=dipofiled.value
-    const dipovalueint=parseFloat(dipovalue)
+    const dipofieldvalue=getvalue('dipo-field')
 
-    const diposit=document.getElementById('diposit')
-    const dipototal=diposit.innerText
-    const dipototolint=parseFloat(dipototal)
+    const dipototal=getinnertxt('diposit')
     
-    diposit.innerText= dipototolint+dipovalueint
+    const calculatedipo= dipofieldvalue+dipototal
+    setvalue('diposit',calculatedipo)
+
+    const balancetotal=getinnertxt('balance')
+    const calculatebalance=balancetotal+dipofieldvalue
+    setvalue('balance',calculatebalance)
+
+    
 
 
-    const balance=document.getElementById('balance')
-    const balancetxt=balance.innerText
-    const balanceint=parseFloat(balancetxt)
-    balance.innerText=balanceint+dipovalueint
 
-
-
-    dipofiled.value=''
+    
 
 })
 
@@ -29,19 +49,15 @@ document.getElementById('dipo-btn').addEventListener('click',function(){
 
 
 document.getElementById('with-btn').addEventListener('click',function(){
-    const withdraw=document.getElementById('with-field')
-    const withdrawfield=withdraw.value
-    const withdrawint=parseFloat(withdrawfield)
-    
-    const withdrawtxt=document.getElementById('withdraw')
-    const innerwith=withdrawtxt.innerText
-    const innerwithint=parseFloat(innerwith)
-    withdrawtxt.innerText=innerwithint+withdrawint
+    const withdrawfieldvalue=getvalue('with-field')
+    const withdrawtxt=getinnertxt('withdraw')
+    const calwithvalue=withdrawfieldvalue+withdrawtxt
+    setvalue('withdraw',calwithvalue)
 
-    const balance=document.getElementById('balance')
-    const balancetxt=balance.innerText
-    const balanceint=parseFloat(balancetxt)
-    balance.innerText=balanceint-withdrawint
+    const balanceforwith=getinnertxt('balance')
+    const calbalance=balanceforwith-withdrawfieldvalue
+    setvalue('balance',calbalance)
+    
     
     
 })
