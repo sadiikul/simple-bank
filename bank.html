@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Inside Bank</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-center text-5xl mt-6 ">You are in <span class="font-semibold text-violet-600"> Simple Bank</span>!!!</h1>
+    </header>
+    <main>
+        <section class="mt-12">
+            <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto text-white">
+                <div class="bg-green-400 p-8 rounded-xl">
+                    <h4>Diposit</h4>
+                    <h2>$ <span id="diposit">00</span></h2>
+                </div>
+                <div class="bg-teal-400 p-8 rounded-xl">
+                    <h4>Withdraw</h4>
+                    <h2>$ <span id="withdraw" >00</span></h2>
+                </div>
+                <div class="bg-pink-500	 p-8 rounded-xl">
+                    <h4>Balance</h4>
+                    <h2>$ <span id="balance">1240</span></h2>
+                </div>
+            </div>
+            
+        </section>
+        <section class="mt-12">
+            <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto ">
+                <div class="bg-blue-600 p-8 rounded-xl">
+                    <h4 class="text-white">Please Diposit</h4>
+                    <input id="dipo-field" class="w-9/12 block mb-2 px-3" type="text" placeholder="amount">
+                <button id="dipo-btn" class="bg-amber-600 px-8 py-2 text-white rounded-lg hover:bg-green-400">diposit</button>
+                </div>
+                <div class="bg-purple-500 p-8 rounded-xl">
+                    <h4 class="text-white">Please Withdraw</h4>
+                    <input id="with-field" class="w-9/12 block mb-2 px-3" type="text" placeholder="amount">
+                <button id="with-btn" class="bg-amber-600 px-8 py-2 text-white rounded-lg hover:bg-green-400">withdraw</button>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+    </main>
+    <script src="dipo.js"></script>
+</body>
+</html>
